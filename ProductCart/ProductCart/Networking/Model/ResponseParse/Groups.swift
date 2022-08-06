@@ -12,17 +12,27 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct BeenHere : Codable {
-	let lastCheckinExpiredAt : Int?
+struct Groups : Codable {
+	let type : String?
+	let name : String?
+	let count : Int?
+	let items : [String]?
 
 	enum CodingKeys: String, CodingKey {
 
-		case lastCheckinExpiredAt = "lastCheckinExpiredAt"
+		case type = "type"
+		case name = "name"
+		case count = "count"
+		case items = "items"
 	}
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		lastCheckinExpiredAt = try values.decodeIfPresent(Int.self, forKey: .lastCheckinExpiredAt)
+		type = try values.decodeIfPresent(String.self, forKey: .type)
+		name = try values.decodeIfPresent(String.self, forKey: .name)
+		count = try values.decodeIfPresent(Int.self, forKey: .count)
+		items = try values.decodeIfPresent([String].self, forKey: .items)
+        
 	}
 
 }

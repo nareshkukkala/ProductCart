@@ -1,5 +1,5 @@
 /* 
-Copyright (c) 2021 Swift Models Generated from JSON powered by http://www.json4swift.com
+Copyright (c) 2022 Swift Models Generated from JSON powered by http://www.json4swift.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -29,19 +29,19 @@ struct Venues : Codable {
 
 	enum CodingKeys: String, CodingKey {
 
-		case id = "id"
-		case name = "name"
-		case contact = "contact"
-		case location = "location"
-		case categories = "categories"
-		case verified = "verified"
-		case stats = "stats"
-		case beenHere = "beenHere"
-		case venuePage = "venuePage"
-		case hereNow = "hereNow"
-		case referralId = "referralId"
-		case venueChains = "venueChains"
-		case hasPerk = "hasPerk"
+		case id
+		case name
+		case contact
+		case location
+		case categories
+		case verified
+		case stats
+		case beenHere
+		case venuePage
+		case hereNow
+		case referralId
+		case venueChains
+		case hasPerk
 	}
 
 	init(from decoder: Decoder) throws {

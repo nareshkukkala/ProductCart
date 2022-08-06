@@ -1,5 +1,5 @@
 /* 
-Copyright (c) 2021 Swift Models Generated from JSON powered by http://www.json4swift.com
+Copyright (c) 2022 Swift Models Generated from JSON powered by http://www.json4swift.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -15,20 +15,21 @@ import Foundation
 struct HereNow : Codable {
 	let count : Int?
 	let summary : String?
-	let groups : [String]?
+	let groups : [Groups]?
 
 	enum CodingKeys: String, CodingKey {
 
-		case count = "count"
-		case summary = "summary"
-		case groups = "groups"
+		case count
+		case summary
+		case groups
 	}
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		count = try values.decodeIfPresent(Int.self, forKey: .count)
 		summary = try values.decodeIfPresent(String.self, forKey: .summary)
-		groups = try values.decodeIfPresent([String].self, forKey: .groups)
+		groups = try values.decodeIfPresent([Groups].self, forKey: .groups)
+        
 	}
 
 }
